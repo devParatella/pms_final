@@ -1,0 +1,32 @@
+/* footer.css */
+.footer {
+    margin-top: 20px;
+    background-color: #2c3e50;
+    color: #ffffff;
+    text-align: center;
+    position:sticky;
+    padding: 8px 0;
+    font-size: 14px;
+  }
+  
+  .footer .copyright {
+    margin-bottom: 10px;
+  }
+  
+  .footer .copyright strong {
+    color: #ecf0f1;
+  }
+  
+  .footer .credits {
+    font-size: 12px;
+    color: #bdc3c7;
+  }
+  
+  .footer .credits p {
+    margin: 0;
+  }
+  
+  .footer .credits strong {
+    color: #ecf0f1;
+  }
+  

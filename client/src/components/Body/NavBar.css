@@ -1,0 +1,85 @@
+.navbar-macos {
+    background-color: #f9f9f9;
+    padding: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .logo {
+    margin-top: 90px;
+    min-width: 80px;
+    min-height: 80px;
+    margin-right: 0px;
+  }
+  .navbar-list {
+    list-style: none;
+    display: flex;
+    margin: 10;
+    padding: 10;
+  }
+  
+  .navbar-item {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  .navbar-link {
+    text-decoration: none;
+    color: #333;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    transition: background-color 0.3s;
+  }
+  
+  .navbar-link i {
+    margin-right: 8px;
+  }
+  
+  .navbar-link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    overflow: hidden;
+    z-index: 100;
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.5s;
+  }
+  
+  /* Quando o dropdown está ativo */
+  .navbar-item.dropdown:hover .dropdown-menu,
+  .navbar-item .dropdown-menu.active {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(2);
+  }
+  
+  .dropdown-menu li {
+    padding: 10px 15px;
+  }
+  
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+  }
+  
+  .dropdown-menu li a:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+  
