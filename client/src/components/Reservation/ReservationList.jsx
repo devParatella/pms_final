@@ -1,11 +1,11 @@
 // components/ReservationList.js
 import React, { useEffect, useState } from "react";
+import Swal from 'sweetalert2';
+import { getAllPaymentConditions } from '../../services/paymentConditionService';
+import { getAllReservations, updateReservation } from "../../services/reservationService";
+import Footer from "../Body/Footer";
 import Header from "../Body/Header";
 import NavBar from "../Body/NavBar";
-import Footer from "../Body/Footer";
-import { getAllReservations, updateReservation } from "../../services/reservationService";
-import { getAllPaymentConditions } from '../../services/paymentConditionService';
-import Swal from 'sweetalert2';
 import "./ReservationList.css";
 
 const ReservationList = () => {
@@ -160,15 +160,7 @@ const ReservationList = () => {
         <main id="main" className="main">
           <div className="">
             <h1>Listar Reservas</h1>
-            <nav>
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  <a href="/">Home</a>
-                </li>
-                <li className="breadcrumb-item">Movimentações</li>
-                <li className="breadcrumb-item active">Listar Reservas</li>
-              </ol>
-            </nav>
+
           </div>
           <div className="reservations-container">
             {reservations.map((reservation) => (

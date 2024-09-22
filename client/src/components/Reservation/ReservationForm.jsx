@@ -1,14 +1,14 @@
-import React, { useState, useEffect } from "react";
 import axios from "axios";
-import NavBar from "../Body/NavBar";
-import Footer from "../Body/Footer";
-import "./ReservationForm.css";
-import { getUserInfo } from "../User/auth";
-import RemoveImageButton from "../../assets/img/remove.png";
-import Swal from "sweetalert2";
 import pdfMake from "pdfmake/build/pdfmake";
 import pdfFonts from "pdfmake/build/vfs_fonts";
+import React, { useEffect, useState } from "react";
+import Swal from "sweetalert2";
+import RemoveImageButton from "../../assets/img/remove.png";
+import Footer from "../Body/Footer";
+import NavBar from "../Body/NavBar";
 import Legend from "../SuiteOverView/Legend";
+import { getUserInfo } from "../User/auth";
+import "./ReservationForm.css";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const ReservationForm = () => {
@@ -439,7 +439,7 @@ const ReservationForm = () => {
                       <option value="">Selecione uma acomodação</option>
                       {products.map((product) => (
                         <option key={product.id} value={product.id}>
-                          {product.name}
+                          {product.product_name}
                         </option>
                       ))}
                     </select>

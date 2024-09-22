@@ -1,9 +1,9 @@
 import React, { useState } from "react";
+import Swal from 'sweetalert2';
+import { createPaymentCondition } from "../../services/paymentConditionService";
+import Footer from "../Body/Footer";
 import Header from "../Body/Header";
 import NavBar from "../Body/NavBar";
-import Footer from "../Body/Footer";
-import { createPaymentCondition } from "../../services/paymentConditionService";
-import Swal from 'sweetalert2';
 import "./paymentConditions.css";
 
 const PaymentConditionForm = () => {
@@ -43,17 +43,8 @@ const PaymentConditionForm = () => {
         <NavBar isOpen={isSidebarOpen} />
         <main id="main" className="main">
           <div className="breadcrumb-container">
-            <h1>Condição de Pagamento</h1>
-            <nav>
-              <ol className="breadcrumb">
-                <li className="breadcrumb-item">
-                  <a href="/">Home</a>
-                </li>
-                <li className="breadcrumb-item">Cadastro</li>
-                <li className="breadcrumb-item active">Condição de Pagamento</li>
-              </ol>
-            </nav>
-          </div>
+            <h1>Forma de Pagamento</h1>
+                   </div>
           <div className="PaymentCondition-form-container">
             <form onSubmit={handleSubmit}>
               <div className="PaymentCondition-form-group">

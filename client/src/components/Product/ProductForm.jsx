@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Swal from 'sweetalert2';
 // import Header from '../Body/Header';
-import NavBar from '../Body/NavBar';
-import Footer from '../Body/Footer';
 import { createProduct } from '../../services/productService';
+import Footer from '../Body/Footer';
+import NavBar from '../Body/NavBar';
 import './productForm.css'; // Importação do css
 
 const ProductForm = () => {
-  const [name, setName] = useState('');
+  const [product_name, setProduct_name] = useState('');
   const [description, setDescription] = useState('');
   const [capacity, setCapacity] = useState('');
   const [location, setLocation] = useState('');
@@ -30,7 +30,7 @@ const ProductForm = () => {
 
     try {
       const formData = new FormData();
-      formData.append('name', name);
+      formData.append('product_name', product_name);
       formData.append('description', description);
       formData.append('capacity', capacity);
       formData.append('location', location);
@@ -39,7 +39,7 @@ const ProductForm = () => {
 
       await createProduct(formData);
       Swal.fire('Sucesso', 'Acomodação cadastrada com sucesso!', 'success');
-      setName('');
+      setProduct_name('');
       setDescription('');
       setCapacity('');
       setLocation('');
@@ -90,8 +90,8 @@ const ProductForm = () => {
               <div className="product-form-group">
                 <input
                   type="text"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
+                  value={product_name}
+                  onChange={(e) => setProduct_name(e.target.value)}
                   required
                 />
                 <label>Nome:</label>

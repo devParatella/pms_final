@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Header from "../Body/Header";
-import NavBar from "../Body/NavBar";
-import Footer from "../Body/Footer";
-import { getAllPaymentConditions } from '../../services/paymentConditionService';
-import "./PaymentConditionList.css";
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import React, { useEffect, useState } from 'react';
+import { getAllPaymentConditions } from '../../services/paymentConditionService';
+import Footer from "../Body/Footer";
+import Header from "../Body/Header";
+import NavBar from "../Body/NavBar";
+import "./PaymentConditionList.css";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const PaymentConditionsReport = () => {
@@ -123,15 +123,7 @@ const PaymentConditionsReport = () => {
       <main id="main" className="main">
         <div className="breadcrumb-container">
           <h1>Formas de Pagamentos</h1>
-          <nav>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-              <li className="breadcrumb-item">Relatórios</li>
-              <li className="breadcrumb-item active">Relatório de formas de pagamento</li>
-            </ol>
-          </nav>
+
         </div>
         <div>
           <button className="btn btn-primary" onClick={gerarPDF}>Gerar relatório de formas de pagamento</button>

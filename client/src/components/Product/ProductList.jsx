@@ -94,15 +94,7 @@ const ProductList = () => {
       <main id="main" className="main">
         <div className="">
           <h1>Listar Acomodações</h1>
-          <nav>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-              <li className="breadcrumb-item">Movimentações</li>
-              <li className="breadcrumb-item active">Listar Acomodações</li>
-            </ol>
-          </nav>
+
         </div>
         <div className='product-table-container'>
           <table className='product-table-content'>

@@ -129,15 +129,6 @@ const ProductUpdate = () => {
       <main id="main" className="main">
         <div className="breadcrumb-container">
           <h1>Acomodação {product.id}</h1>
-          <nav>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-              <li className="breadcrumb-item">Movimentação</li>
-              <li className="breadcrumb-item active">Editar Acomodação</li>
-            </ol>
-          </nav>
         </div>
         <div className="update-form-container">
           <form onSubmit={handleFormSubmit} className="update-form-grid">

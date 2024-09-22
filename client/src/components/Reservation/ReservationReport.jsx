@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Header from "../Body/Header";
-import NavBar from "../Body/NavBar";
-import Footer from "../Body/Footer";
-import { getAllReservations } from "../../services/reservationService";
-import "./ReservationForm.css";
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import React, { useEffect, useState } from 'react';
+import { getAllReservations } from "../../services/reservationService";
+import Footer from "../Body/Footer";
+import Header from "../Body/Header";
+import NavBar from "../Body/NavBar";
+import "./ReservationForm.css";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const ProductReport = () => {
@@ -137,15 +137,7 @@ const ProductReport = () => {
       <main id="main" className="main">
         <div className="breadcrumb-container">
           <h1>Reservas</h1>
-          <nav>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-              <li className="breadcrumb-item">Relatórios</li>
-              <li className="breadcrumb-item active">Relatório de reservas</li>
-            </ol>
-          </nav>
+
         </div>
         <div>
           <button className="btn btn-primary" onClick={gerarPDF}>Gerar relatório de reservas</button>

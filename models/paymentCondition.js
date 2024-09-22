@@ -5,7 +5,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       unique: true,
     },
-    // Adicione mais campos conforme necessário
+    
   });
 
   return PaymentCondition;

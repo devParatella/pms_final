@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Header from "../Body/Header";
-import NavBar from "../Body/NavBar";
-import Footer from "../Body/Footer";
-import { getAllProducts } from "../../services/productService";
-import "./productList.css";
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import React, { useEffect, useState } from 'react';
+import { getAllProducts } from "../../services/productService";
+import Footer from "../Body/Footer";
+import Header from "../Body/Header";
+import NavBar from "../Body/NavBar";
+import "./productList.css";
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
 const ProductReport = () => {
@@ -120,16 +120,7 @@ const ProductReport = () => {
       <main id="main" className="main">
         <div className="breadcrumb-container">
           <h1>Produtos</h1>
-          <nav>
-            <ol className="breadcrumb">
-              <li className="breadcrumb-item">
-                <a href="/">Home</a>
-              </li>
-              <li className="breadcrumb-item">Relatórios</li>
-              <li className="breadcrumb-item active">Relatório de produtos</li>
-            </ol>
-          </nav>
-        </div>
+                </div>
         <div>
           <button className="btn btn-primary" onClick={gerarPDF}>Gerar relatório de produtos</button>
         </div>
