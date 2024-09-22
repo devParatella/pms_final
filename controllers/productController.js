@@ -2,10 +2,10 @@ const { Product, ReservationProducts } = require('../models');
 
 exports.create = async (req, res) => {
   try {
-    const { name, description, capacity, location, hourlyRate } = req.body;
+    const { product_name, description, capacity, location, daylyRate } = req.body;
     const photo = req.file ? req.file.path : null;
 
-    const product = await Product.create({ name, description, capacity, location, photo, hourlyRate });
+    const product = await Product.create({ product_name, description, capacity, location, photo, daylyRate });
     res.status(200).json(product);
   } catch (error) {
     res.status(400).json({ error: error.message });

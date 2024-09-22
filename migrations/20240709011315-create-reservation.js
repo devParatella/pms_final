@@ -22,8 +22,8 @@ module.exports = {
         allowNull: false
       },
       status: {
-        type: Sequelize.ENUM("Aberta", "Cancelada", "Finalizada"),
-        defaultValue: "Aberta"
+        type: Sequelize.ENUM("Ativa", "Cancelada", "Finalizada","Efetivada"),
+        defaultValue: "Ativa"
       },
       repeat: {
         type: Sequelize.ENUM("None", "Daily", "Weekly", "Monthly"),

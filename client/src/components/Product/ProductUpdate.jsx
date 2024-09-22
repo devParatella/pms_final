@@ -49,7 +49,7 @@ const ProductUpdate = () => {
       return;
     }
 
-    if (parseFloat(product.hourlyRate) <= 0) {
+    if (parseFloat(product.daylyRate) <= 0) {
       Swal.fire({
         icon: 'warning',
         title: 'Atenção!',
@@ -98,10 +98,10 @@ const ProductUpdate = () => {
     }
   };
 
-  const handleHourlyRateChange = (e) => {
+  const handleDaylyRateChange = (e) => {
     const value = e.target.value;
     if (value === "" || (!isNaN(parseFloat(value)) && parseFloat(value) > 0)) {
-      setProduct({ ...product, hourlyRate: value });
+      setProduct({ ...product, daylyRate: value });
     } else {
       Swal.fire({
         icon: 'warning',
@@ -182,9 +182,9 @@ const ProductUpdate = () => {
               <div className="update-form-group">
                 <input
                   type="number"
-                  name="hourlyRate"
-                  value={product.hourlyRate}
-                  onChange={handleHourlyRateChange}
+                  name="daylyRate"
+                  value={product.daylyRate}
+                  onChange={handleDaylyRateChange}
                 />
                 <label>Valor por diária:</label>
               </div>

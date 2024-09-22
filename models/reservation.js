@@ -67,8 +67,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: true,
     },
     status: {
-      type: DataTypes.ENUM("Aberta", "Cancelada", "Finalizada"),
-      defaultValue: "Aberta",
+      type: DataTypes.ENUM("Ativa", "Cancelada", "Finalizada", "Efetivada"),
+      defaultValue: "Ativa",
     },
     totalValue: {
       type: DataTypes.DECIMAL(10, 2),

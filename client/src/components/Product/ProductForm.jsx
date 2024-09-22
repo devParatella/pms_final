@@ -12,7 +12,7 @@ const ProductForm = () => {
   const [capacity, setCapacity] = useState('');
   const [location, setLocation] = useState('');
   const [photo, setPhoto] = useState(null); // Para armazenar o arquivo de imagem
-  const [hourlyRate, setHourlyRate] = useState('');
+  const [daylyRate, setDaylyRate] = useState('');
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,7 +23,7 @@ const ProductForm = () => {
       return;
     }
 
-    if (parseFloat(hourlyRate) <= 0) {
+    if (parseFloat(daylyRate) <= 0) {
       Swal.fire('Erro', 'Por favor, digite um número maior que zero para o valor por diária.', 'error');
       return;
     }
@@ -35,7 +35,7 @@ const ProductForm = () => {
       formData.append('capacity', capacity);
       formData.append('location', location);
       formData.append('photo', photo); // Adiciona o arquivo de imagem ao FormData
-      formData.append('hourlyRate', hourlyRate);
+      formData.append('daylyRate', daylyRate);
 
       await createProduct(formData);
       Swal.fire('Sucesso', 'Acomodação cadastrada com sucesso!', 'success');
@@ -44,7 +44,7 @@ const ProductForm = () => {
       setCapacity('');
       setLocation('');
       setPhoto(null); // Limpa o estado da foto após o envio
-      setHourlyRate('');
+      setDaylyRate('');
     } catch (error) {
       Swal.fire('Erro', 'Erro ao cadastrar Acomodação', 'error');
     }
@@ -65,10 +65,10 @@ const ProductForm = () => {
   };
 
 
-  const handleHourlyRateChange = (e) => {
+  const handleDaylyRateChange = (e) => {
     const value = e.target.value;
     if (value === '' || (!isNaN(parseFloat(value)) && parseFloat(value) > 0)) {
-      setHourlyRate(value);
+      setDaylyRate(value);
     } else {
       Swal.fire('Atenção!', 'Digite um número maior que zero para o valor por diária.', 'warning');
     }
@@ -124,8 +124,8 @@ const ProductForm = () => {
               <div className="product-form-group">
                 <input
                   type="number"
-                  value={hourlyRate}
-                  onChange={handleHourlyRateChange}
+                  value={daylyRate}
+                  onChange={handleDaylyRateChange}
                   required
                 />
                 <label>Valor por Diária:</label>

@@ -1,12 +1,12 @@
 module.exports = (sequelize, DataTypes) => {
   const Product = sequelize.define('Product', {
-    name: {
+    product_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
     },
     capacity: {
       type: DataTypes.INTEGER,
@@ -14,26 +14,18 @@ module.exports = (sequelize, DataTypes) => {
     },
     location: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     },
     photo: {
       type: DataTypes.STRING,
     },
-    hourlyRate: {
+    daylyRate: {
       type: DataTypes.DECIMAL(10, 2),
       allowNull: false,
     },
-  },
-    {
-      sequelize,
-      modelName: 'Product',
-      indexes: [
-        {
-          unique: true,
-          fields: ['name', 'capacity', 'location']
-        }
-      ]
-    });
+  }, 
+);
+
   Product.associate = (models) => {
     Product.belongsToMany(models.Reservation, {
       through: models.ReservationProducts,
@@ -41,5 +33,6 @@ module.exports = (sequelize, DataTypes) => {
       otherKey: 'reservationId',
     });
   };
+
   return Product;
 };

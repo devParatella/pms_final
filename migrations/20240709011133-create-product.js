@@ -9,13 +9,13 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      product_name: {
         type: Sequelize.STRING,
         allowNull: false
       },
       description: {
         type: Sequelize.TEXT,
-        allowNull: true
+        allowNull: false
       },
       capacity: {
         type: Sequelize.INTEGER,
@@ -29,7 +29,7 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: true
       },
-      hourlyRate: {
+      daylyRate: {
         type: Sequelize.DECIMAL(10, 2),
         allowNull: false
       },
@@ -43,12 +43,6 @@ module.exports = {
         type: Sequelize.DATE,
         defaultValue: Sequelize.fn('now')
       }
-    });
-
-    // Adicionar índice único
-    await queryInterface.addIndex('Products', ['name', 'capacity', 'location'], {
-      unique: true,
-      name: 'unique_product'
     });
   },
 

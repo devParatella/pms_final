@@ -45,7 +45,7 @@ const ProductReport = () => {
                 { text: products.name, style: 'item' },
                 { text: products.location, style: 'item' },
                 { text: products.capacity, style: 'item' },
-                { text: products.hourlyRate, style: 'item' },
+                { text: products.daylyRate, style: 'item' },
               ])),
               [{ text: `Total: ${products.length}`, colSpan: 5, style: 'total' },
               {}]

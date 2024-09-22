@@ -87,7 +87,7 @@ const ReservationForm = () => {
     );
 
     if (product && paymentCondition) {
-      const productTotal = product.hourlyRate * duration;
+      const productTotal = product.daylyRate * duration;
       setAddedProducts([
         ...addedProducts,
         {
@@ -531,7 +531,7 @@ const ReservationForm = () => {
                         <tr key={index}>
                           <td className="col-id">{product.id}</td>
                           <td className="col-product">{product.name}</td>
-                          <td className="col-value">R$ {product.hourlyRate}</td>
+                          <td className="col-value">R$ {product.daylyRate}</td>
                           <td className="col-hours">{product.quantity}</td>
                           <td className="col-total">
                             R$ {product.total.toFixed(2)}

@@ -125,7 +125,7 @@ const ProductList = () => {
                   <td className="col-name">{product.name}</td>
                   <td className="col-location">{product.location}</td>
                   <td className="col-capacity">{product.capacity}</td>
-                  <td className="col-rate">{product.hourlyRate}</td>
+                  <td className="col-rate">{product.daylyRate}</td>
                   <td>
                     <button className="product-edit-button" onClick={() => handleEdit(product.id)}>
                       <img src={editImage} alt="Editar" />

@@ -188,7 +188,7 @@ const ReservationList = () => {
                   {reservation.Products.map((product) => (
                     <li className="product-item" key={product.id}>
                       <p className="product-name">Ácomodação: {product.name}</p>
-                      <p className="hourly-rate">Valor por Diária: R${product.hourlyRate}</p>
+                      <p className="hourly-rate">Valor por Diária: R${product.daylyRate}</p>
                     </li>
                   ))}
                 </ul>
