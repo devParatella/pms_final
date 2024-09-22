@@ -10,6 +10,7 @@ dotenv.config();
 app.use(bodyParser.json());
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(specs)); // Middleware para Swagger
 app.use('/', require('./routes'));
+const { createDatabaseIfNotExists } = require('./config/create_database');
 
 app.use(express.static(path.join(__dirname, './client/build')));
 app.get('*', (req, res) => {
@@ -18,8 +19,14 @@ app.get('*', (req, res) => {
 
 const PORT = process.env.PORT_APP || 3000;
 
+const startServer = async () => {
+  // Verificar se o banco de dados existe e criar se necessário
+  await createDatabaseIfNotExists();
+
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
   });
-});
+})};
+
+startServer();
